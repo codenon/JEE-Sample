@@ -11,6 +11,13 @@
 	<br />
 	<a href="/J2EE-Sample/servlet/HttpServletSample2">HttpServletSample2</a>
 	<br />
+	<br />
+
 	<%=request.getAttribute("data")%>
+
+	<br />
+	<br />
+	<br />
+	<a href="/J2EE-Sample/jsp/index.jsp">JSP</a>
 </body>
 </html>
