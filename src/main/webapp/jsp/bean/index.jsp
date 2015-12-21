@@ -17,34 +17,13 @@
 <meta http-equiv="description" content="This is my page">
 <!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
--->
+	-->
 </head>
 
 <body>
-	<h1>
-		<font color="red">
-			<%=new Date().toLocaleString()%>
-		</font>
-	</h1>
 	<br />
+	<a href="/J2EE-Sample/jsp/bean/1.jsp">1.jsp </a>
 	<br />
-	<a href="/J2EE-Sample/jsp/1.jsp">1.jsp</a>
-	<br />
-	<a href="/J2EE-Sample/jsp/2.jsp">2.jsp</a>
-	<br />
-	<a href="/J2EE-Sample/jsp/3.jsp">3.jsp</a>
-	<br />
-	<a href="/J2EE-Sample/jsp/4.jsp">4.jsp</a>
-	<br />
-	<a href="/J2EE-Sample/jsp/5.jsp">5.jsp</a>
-	<br />
-	<a href="/J2EE-Sample/jsp/6.jsp">6.jsp</a>
-	<br />
-	<br />
-	<a href="/J2EE-Sample/jsp/bean/index.jsp">bean</a>
-	<br />
-	<a href="/J2EE-Sample/jsp/el/el.jsp">el.jsp</a>
-	<br />
-	<a href="/J2EE-Sample/jsp/jstl/jstl.jsp">jstl.jsp</a>
-	<br />
+	<a href="/J2EE-Sample/jsp/bean/calculator.jsp">calculator.jsp</a>
 </body>
+</html>
