@@ -18,8 +18,7 @@ public class HttpServletSample extends HttpServlet {
 
 	private static final long serialVersionUID = -6311145867946284635L;
 
-	public void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		location(response);
 		gzip(response);
@@ -30,8 +29,7 @@ public class HttpServletSample extends HttpServlet {
 		exception();
 	}
 
-	public void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
 
@@ -60,8 +58,7 @@ public class HttpServletSample extends HttpServlet {
 	}
 
 	/** content-type的示例:说明回送数据的类型 **/
-	private void contentType(HttpServletResponse response)
-			throws FileNotFoundException, IOException {
+	private void contentType(HttpServletResponse response) throws FileNotFoundException, IOException {
 		response.setHeader("content-type", "image/jpeg");
 
 		FileInputStream in = new FileInputStream("c:\\1.jpg");
@@ -81,8 +78,7 @@ public class HttpServletSample extends HttpServlet {
 	}
 
 	/** 下载 **/
-	private void download(HttpServletResponse response)
-			throws FileNotFoundException, IOException {
+	private void download(HttpServletResponse response) throws FileNotFoundException, IOException {
 		response.setHeader("content-disposition", "attachment;filename=2.jpg");
 
 		FileInputStream in = new FileInputStream("c:\\2.jpg");

@@ -128,7 +128,7 @@ public class HttpServletSample2 extends HttpServlet {
 
 		// ServletContext context = this.getServletContext();
 		context.setAttribute("data", data);
-		RequestDispatcher rd = context.getRequestDispatcher("/view.jsp");
+		RequestDispatcher rd = context.getRequestDispatcher("/servlet/view.jsp");
 		rd.forward(request, response);
 	}
 
