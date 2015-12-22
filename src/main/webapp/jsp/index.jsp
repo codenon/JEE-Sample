@@ -43,8 +43,10 @@
 	<br />
 	<a href="/J2EE-Sample/jsp/bean/index.jsp">bean</a>
 	<br />
-	<a href="/J2EE-Sample/jsp/el/el.jsp">el.jsp</a>
 	<br />
-	<a href="/J2EE-Sample/jsp/jstl/jstl.jsp">jstl.jsp</a>
+	<a href="/J2EE-Sample/jsp/tag/index.jsp">tag</a>
+	<br />
+	<br />
+	<a href="/J2EE-Sample/jsp/el/el.jsp">el.jsp</a>
 	<br />
 </body>

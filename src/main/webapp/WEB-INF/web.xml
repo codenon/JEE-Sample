@@ -83,6 +83,23 @@
 		<param-value>Development</param-value>
 	</context-param>
 
+	<!-- http://stackoverflow.com/questions/28296543/nullpointerexception-when-add-custom-taglib-in-jsp -->
+	<jsp-config>
+		<taglib>
+			<taglib-uri>tagLib</taglib-uri>
+			<taglib-location>/jsp/tag/tag/tag.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>tagSimple</taglib-uri>
+			<taglib-location>/jsp/tag/simple/simple.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>tagExample</taglib-uri>
+			<taglib-location>/jsp/tag/example/example.tld</taglib-location>
+		</taglib>
+	</jsp-config>
+
+
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>

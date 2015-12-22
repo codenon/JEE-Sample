@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib
+	xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+	version="2.0">
+
+	<description>A tag library exercising SimpleTag handlers.</description>
+	<tlib-version>1.0</tlib-version>
+	<short-name>SimpleTagLibrary</short-name>
+	<uri>tagSimple</uri>
+
+	<tag>
+		<name>viewIP</name>
+		<tag-class>cn.conon.j2ee.sample.jsp.tag.simple.SimpleTagDemo1</tag-class>
+		<body-content>empty</body-content>
+	</tag>
+
+	<tag>
+		<name>SimpleTagDemo2</name>
+		<tag-class>cn.conon.j2ee.sample.jsp.tag.simple.SimpleTagDemo2</tag-class>
+		<body-content>scriptless</body-content>
+	</tag>
+
+	<tag>
+		<name>SimpleTagDemo3</name>
+		<tag-class>cn.conon.j2ee.sample.jsp.tag.simple.SimpleTagDemo3</tag-class>
+		<body-content>scriptless</body-content>
+	</tag>
+
+	<tag>
+		<name>SimpleTagDemo4</name>
+		<tag-class>cn.conon.j2ee.sample.jsp.tag.simple.SimpleTagDemo4</tag-class>
+		<body-content>scriptless</body-content>
+	</tag>
+
+	<tag>
+		<name>SimpleTagDemo5</name>
+		<tag-class>cn.conon.j2ee.sample.jsp.tag.simple.SimpleTagDemo5</tag-class>
+		<body-content>scriptless</body-content>
+	</tag>
+
+
+	<tag>
+		<name>SimpleTagDemo6</name>
+		<tag-class>cn.conon.j2ee.sample.jsp.tag.simple.SimpleTagDemo6</tag-class>
+		<body-content>scriptless</body-content>
+
+		<attribute>
+			<name>count</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>  <!-- 指定属性值是否可以是一个脚本或EL表达式 -->
+		</attribute>
+
+		<attribute>
+			<name>content</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+</taglib>
+
