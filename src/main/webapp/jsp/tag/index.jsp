@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	<a href="${pageContext.request.contextPath }/example/1.jsp">看情书</a>
+	<a href="${pageContext.request.contextPath }/jsp/tag/example/1.jsp">看情书</a>
 
 	<br />
 	<br />
