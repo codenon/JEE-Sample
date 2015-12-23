@@ -28,25 +28,25 @@
 	</h1>
 	<br />
 	<br />
-	<a href="/J2EE-Sample/jsp/1.jsp">1.jsp</a>
+	<a href="/JEE-Sample/jsp/1.jsp">1.jsp</a>
 	<br />
-	<a href="/J2EE-Sample/jsp/2.jsp">2.jsp</a>
+	<a href="/JEE-Sample/jsp/2.jsp">2.jsp</a>
 	<br />
-	<a href="/J2EE-Sample/jsp/3.jsp">3.jsp</a>
+	<a href="/JEE-Sample/jsp/3.jsp">3.jsp</a>
 	<br />
-	<a href="/J2EE-Sample/jsp/4.jsp">4.jsp</a>
+	<a href="/JEE-Sample/jsp/4.jsp">4.jsp</a>
 	<br />
-	<a href="/J2EE-Sample/jsp/5.jsp">5.jsp</a>
+	<a href="/JEE-Sample/jsp/5.jsp">5.jsp</a>
 	<br />
-	<a href="/J2EE-Sample/jsp/6.jsp">6.jsp</a>
-	<br />
-	<br />
-	<a href="/J2EE-Sample/jsp/bean/index.jsp">bean</a>
+	<a href="/JEE-Sample/jsp/6.jsp">6.jsp</a>
 	<br />
 	<br />
-	<a href="/J2EE-Sample/jsp/tag/index.jsp">tag</a>
+	<a href="/JEE-Sample/jsp/bean/index.jsp">bean</a>
 	<br />
 	<br />
-	<a href="/J2EE-Sample/jsp/el/el.jsp">el.jsp</a>
+	<a href="/JEE-Sample/jsp/tag/index.jsp">tag</a>
+	<br />
+	<br />
+	<a href="/JEE-Sample/jsp/el/el.jsp">el.jsp</a>
 	<br />
 </body>

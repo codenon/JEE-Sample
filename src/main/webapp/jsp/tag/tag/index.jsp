@@ -11,16 +11,16 @@
 
 <body>
 
-	<a href="/J2EE-Sample/jsp/tag/tag/1.jsp">1.jsp</a>
+	<a href="/JEE-Sample/jsp/tag/tag/1.jsp">1.jsp</a>
 	<br />
 	<br />
-	<a href="/J2EE-Sample/jsp/tag/tag/2.jsp">2.jsp</a>
+	<a href="/JEE-Sample/jsp/tag/tag/2.jsp">2.jsp</a>
 	<br />
 	<br />
-	<a href="/J2EE-Sample/jsp/tag/tag/3.jsp">3.jsp</a>
+	<a href="/JEE-Sample/jsp/tag/tag/3.jsp">3.jsp</a>
 	<br />
 	<br />
-	<a href="/J2EE-Sample/jsp/tag/tag/4.jsp">4.jsp</a>
+	<a href="/JEE-Sample/jsp/tag/tag/4.jsp">4.jsp</a>
 	<br />
 	<br />
 

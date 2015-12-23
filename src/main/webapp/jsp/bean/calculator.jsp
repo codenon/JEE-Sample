@@ -10,7 +10,7 @@
 	<br />
 	<br />
 
-	<jsp:useBean id="bean" class="cn.conon.j2ee.sample.jsp.bean.CalculatorBean" />
+	<jsp:useBean id="bean" class="cn.conon.jee.sample.jsp.bean.CalculatorBean" />
 	<jsp:setProperty name="bean" property="*" />
 	<%
 		bean.calculate();
@@ -26,7 +26,7 @@
 	<br />
 	<br />
 
-	<form action="/J2EE-Sample/jsp/bean/calculator.jsp" method="post">
+	<form action="/JEE-Sample/jsp/bean/calculator.jsp" method="post">
 		<table width="40%" border="1">
 			<tr>
 				<td colspan="2">简单的计算器</td>

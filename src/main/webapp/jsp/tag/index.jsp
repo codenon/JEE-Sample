@@ -14,16 +14,16 @@
 
 	<br />
 	<br />
-	<a href="/J2EE-Sample/jsp/tag/jstl.jsp">jstl.jsp</a>
+	<a href="/JEE-Sample/jsp/tag/jstl.jsp">jstl.jsp</a>
 	<br />
 	<br />
-	<a href="/J2EE-Sample/jsp/tag/tag/index.jsp">tag</a>
+	<a href="/JEE-Sample/jsp/tag/tag/index.jsp">tag</a>
 	<br />
 	<br />
-	<a href="/J2EE-Sample/jsp/tag/simple/index.jsp">simple</a>
+	<a href="/JEE-Sample/jsp/tag/simple/index.jsp">simple</a>
 	<br />
 	<br />
-	<a href="/J2EE-Sample/jsp/tag/example/index.jsp">example</a>
+	<a href="/JEE-Sample/jsp/tag/example/index.jsp">example</a>
 	<br />
 	<br />
 

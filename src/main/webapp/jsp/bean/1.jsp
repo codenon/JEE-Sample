@@ -8,7 +8,7 @@
 
 <body>
 
-	<jsp:useBean id="person" class="cn.conon.j2ee.sample.jsp.bean.Person" />
+	<jsp:useBean id="person" class="cn.conon.jee.sample.jsp.bean.Person" />
 
 	<jsp:setProperty name="person" property="name" value="bbb" />
 

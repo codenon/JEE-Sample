@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <taglib
-	xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns="http://java.sun.com/xml/ns/jee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/jee http://java.sun.com/xml/ns/jee/web-jsptaglibrary_2_0.xsd"
 	version="2.0">
 
 	<description>A tag library exercising SimpleTag handlers.</description>
@@ -13,34 +13,34 @@
 
 	<tag>
 		<name>viewIP</name>
-		<tag-class>cn.conon.j2ee.sample.jsp.tag.tag.ViewIPTag</tag-class>
+		<tag-class>cn.conon.jee.sample.jsp.tag.tag.ViewIPTag</tag-class>
 		<body-content>empty</body-content>
 	</tag>
 
 
 	<tag>
 		<name>demo1</name>
-		<tag-class>cn.conon.j2ee.sample.jsp.tag.tag.TagDemo1</tag-class>
+		<tag-class>cn.conon.jee.sample.jsp.tag.tag.TagDemo1</tag-class>
 		<body-content>JSP</body-content>
 	</tag>
 
 
 	<tag>
 		<name>demo2</name>
-		<tag-class>cn.conon.j2ee.sample.jsp.tag.tag.TagDemo2</tag-class>
+		<tag-class>cn.conon.jee.sample.jsp.tag.tag.TagDemo2</tag-class>
 		<body-content>JSP</body-content>
 	</tag>
 
 	<tag>
 		<name>demo3</name>
-		<tag-class>cn.conon.j2ee.sample.jsp.tag.tag.TagDemo3</tag-class>
+		<tag-class>cn.conon.jee.sample.jsp.tag.tag.TagDemo3</tag-class>
 		<body-content>scriptless</body-content>
 	</tag>
 
 
 	<tag>
 		<name>demo4</name>
-		<tag-class>cn.conon.j2ee.sample.jsp.tag.tag.TagDemo4</tag-class>
+		<tag-class>cn.conon.jee.sample.jsp.tag.tag.TagDemo4</tag-class>
 		<body-content>JSP</body-content>
 	</tag>
 
