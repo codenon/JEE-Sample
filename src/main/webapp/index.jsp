@@ -19,5 +19,11 @@
 	<br />
 	<br />
 	<a href="/JEE-Sample/jsp/index.jsp">JSP</a>
+
+	<br />
+	<br />
+	<br />
+	<a href="/JEE-Sample/websers/rs/jersey/index.jsp">JAX-RS</a>
+
 </body>
 </html>
