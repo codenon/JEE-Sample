@@ -28,28 +28,27 @@
 	</h1>
 	<br />
 	<br />
-	<a href="${pageContext.request.contextPath }/jsp/1.jsp">1.jsp</a>
-	<br />
-	<a href="${pageContext.request.contextPath }/jsp/2.jsp">2.jsp</a>
-	<br />
-	<a href="${pageContext.request.contextPath }/jsp/3.jsp">3.jsp</a>
-	<br />
-	<a href="${pageContext.request.contextPath }/jsp/4.jsp">4.jsp</a>
-	<br />
-	<a href="${pageContext.request.contextPath }/jsp/5.jsp">5.jsp</a>
-	<br />
-	<a href="${pageContext.request.contextPath }/jsp/6.jsp">6.jsp</a>
+	<a href="${pageContext.request.contextPath }/jsp/el/el.jsp">el.jsp</a>
 	<br />
 	<br />
-	<a href="${pageContext.request.contextPath }/jsp/bean/index.jsp">bean</a>
+	<a href="${pageContext.request.contextPath }/jsp/el/1.jsp">1.jsp</a>
 	<br />
 	<br />
-	<a href="${pageContext.request.contextPath }/jsp/tag/index.jsp">tag</a>
+	<a href="${pageContext.request.contextPath }/jsp/el/2.jsp">2.jsp</a>
 	<br />
 	<br />
-	<a href="${pageContext.request.contextPath }/jsp/el/index.jsp">el</a>
+	<a href="${pageContext.request.contextPath }/jsp/el/3.jsp">3.jsp</a>
 	<br />
 	<br />
-	<a href="${pageContext.request.contextPath }/jsp/i18n/i18n.jsp">i18n</a>
+	<a href="${pageContext.request.contextPath }/jsp/el/4.jsp">4.jsp</a>
+	<br />
+	<br />
+	<a href="${pageContext.request.contextPath }/jsp/el/5.jsp">5.jsp</a>
+	<br />
+	<br />
+	<a href="${pageContext.request.contextPath }/jsp/el/6.jsp">6.jsp</a>
+	<br />
+	<br />
+	<a href="${pageContext.request.contextPath }/jsp/el/7.jsp">7.jsp</a>
 	<br />
 </body>

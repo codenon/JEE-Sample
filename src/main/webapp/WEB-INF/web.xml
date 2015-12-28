@@ -70,18 +70,15 @@
 	<!-- Servlet sample end... -->
 
 	<servlet>
-		<servlet-name>Faces Servlet</servlet-name>
-		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<servlet-name>RegisterServlet</servlet-name>
+		<servlet-class>cn.conon.jee.sample.jsp.el.RegisterServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>Faces Servlet</servlet-name>
-		<url-pattern>*.faces</url-pattern>
+		<servlet-name>RegisterServlet</servlet-name>
+		<url-pattern>/jsp/el/RegisterServlet</url-pattern>
 	</servlet-mapping>
-	<context-param>
-		<param-name>javax.faces.PROJECT_STAGE</param-name>
-		<param-value>Development</param-value>
-	</context-param>
+	 
 
 	<!-- http://stackoverflow.com/questions/28296543/nullpointerexception-when-add-custom-taglib-in-jsp -->
 	<jsp-config>
@@ -96,6 +93,10 @@
 		<taglib>
 			<taglib-uri>tagExample</taglib-uri>
 			<taglib-location>/jsp/tag/example/example.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>elFuction</taglib-uri>
+			<taglib-location>/jsp/el/el.tld</taglib-location>
 		</taglib>
 	</jsp-config>
 

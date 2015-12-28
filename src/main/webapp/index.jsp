@@ -5,11 +5,11 @@
 <title>JEE-Sample</title>
 </head>
 <body>
-	<a href="/JEE-Sample/servlet/ServletSample">ServletSample</a>
+	<a href="${pageContext.request.contextPath }/servlet/ServletSample">ServletSample</a>
 	<br />
-	<a href="/JEE-Sample/servlet/HttpServletSample">HttpServletSample</a>
+	<a href="${pageContext.request.contextPath }/servlet/HttpServletSample">HttpServletSample</a>
 	<br />
-	<a href="/JEE-Sample/servlet/HttpServletSample2">HttpServletSample2</a>
+	<a href="${pageContext.request.contextPath }/servlet/HttpServletSample2">HttpServletSample2</a>
 	<br />
 	<br />
 
@@ -18,12 +18,12 @@
 	<br />
 	<br />
 	<br />
-	<a href="/JEE-Sample/jsp/index.jsp">JSP</a>
+	<a href="${pageContext.request.contextPath }/jsp/index.jsp">JSP</a>
 
 	<br />
 	<br />
 	<br />
-	<a href="/JEE-Sample/websers/rs/jersey/index.jsp">JAX-RS</a>
+	<a href="${pageContext.request.contextPath }/websers/rs/jersey/index.jsp">JAX-RS</a>
 
 </body>
 </html>

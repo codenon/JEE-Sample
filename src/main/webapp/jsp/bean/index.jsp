@@ -22,8 +22,8 @@
 
 <body>
 	<br />
-	<a href="/JEE-Sample/jsp/bean/1.jsp">1.jsp </a>
+	<a href="${pageContext.request.contextPath }/jsp/bean/1.jsp">1.jsp </a>
 	<br />
-	<a href="/JEE-Sample/jsp/bean/calculator.jsp">calculator.jsp</a>
+	<a href="${pageContext.request.contextPath }/jsp/bean/calculator.jsp">calculator.jsp</a>
 </body>
 </html>

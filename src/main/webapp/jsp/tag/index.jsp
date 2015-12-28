@@ -14,16 +14,16 @@
 
 	<br />
 	<br />
-	<a href="/JEE-Sample/jsp/tag/jstl.jsp">jstl.jsp</a>
+	<a href="${pageContext.request.contextPath }/jsp/tag/jstl.jsp">jstl.jsp</a>
 	<br />
 	<br />
-	<a href="/JEE-Sample/jsp/tag/tag/index.jsp">tag</a>
+	<a href="${pageContext.request.contextPath }/jsp/tag/tag/index.jsp">tag</a>
 	<br />
 	<br />
-	<a href="/JEE-Sample/jsp/tag/simple/index.jsp">simple</a>
+	<a href="${pageContext.request.contextPath }/jsp/tag/simple/index.jsp">simple</a>
 	<br />
 	<br />
-	<a href="/JEE-Sample/jsp/tag/example/index.jsp">example</a>
+	<a href="${pageContext.request.contextPath }/jsp/tag/example/index.jsp">example</a>
 	<br />
 	<br />
 
