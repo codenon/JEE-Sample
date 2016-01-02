@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant
+		name="struts.enable.DynamicMethodInvocation"
+		value="false" />
+	<constant
+		name="struts.devMode"
+		value="true" />
+
+	<!-- <include file="struts_include_example.xml" /> -->
+
+
+
+	<package
+		name="default"
+		namespace="/"
+		extends="struts-default">
+
+		<default-action-ref name="index" />
+
+		<action
+			name="hello"
+			class="cn.conon.jee.sample.struts2.action.HelloAction">
+			<result name="success">/struts2/helloworld.jsp</result>
+			<result name="input">/struts2/helloworld.jsp</result>
+		</action>
+		<action
+			name="login"
+			class="cn.conon.jee.sample.struts2.action.LoginAction">
+			<result name="success">/struts2/success.jsp</result>
+			<result name="error">/struts2/error.jsp</result>
+		</action>
+		<!-- <action name="index">
+			<result type="redirectAction">
+				<param name="actionName">HelloWorld</param>
+				<param name="namespace">/example</param>
+			</result>
+		</action> -->
+
+	</package>
+
+    <!-- Add addition packages and configuration here. -->
+</struts>

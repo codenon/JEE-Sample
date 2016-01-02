@@ -23,6 +23,12 @@
 	<br />
 	<br />
 	<br />
+	<a href="${pageContext.request.contextPath }/struts2/index.jsp">Struts2</a>
+
+
+	<br />
+	<br />
+	<br />
 	<a href="${pageContext.request.contextPath }/websers/rs/jersey/index.jsp">JAX-RS</a>
 
 </body>
