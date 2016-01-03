@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+	<form-beans>
+		<form-bean
+			name="useForm"
+			type="cn.conon.jee.sample.struts1.formbean.UserForm" />
+	</form-beans>
+
+	<!-- struts收到请求后，找哪个 action处理  actionMapping-->
+	<action-mappings>
+		<action
+			path="/RegisterUI"
+			forward="/struts1/register.jsp" />
+
+		<action
+			path="/register"
+			type="cn.conon.jee.sample.struts1.action.RegisterAction"
+			name="useForm"
+			scope="request"
+			parameter="method"
+			validate="true"
+			input="/struts1/register.jsp">
+			<forward
+				name="message"
+				path="/struts1/message.jsp" />
+		</action>
+	</action-mappings>
+
+
+
+	<controller processorClass="org.apache.struts.action.RequestProcessor" />
+
+	<message-resources parameter="cn.conon.jee.sample.struts1.MyResource" />
+</struts-config>
+

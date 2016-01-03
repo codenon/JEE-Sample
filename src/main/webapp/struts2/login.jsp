@@ -1,10 +1,10 @@
-<%@ page language="java" import="java.util.*" pageEncoding="GB18030"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
-<!-- Struts 2 ±Í«©ø‚ -->
+<!-- Struts 2 Ê†áÁ≠æÂ∫ì -->
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>µ«¬º“≥√Êlogin.jsp</title>
+<title>ÁôªÂΩïÈ°µÈù¢login.jsp</title>
 
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
@@ -12,17 +12,17 @@
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
 <!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+<link rel="stylesheet" type="text/css" href="styles.css">
+-->
 
 </head>
 
 <body>
 
 	<s:form name="form1" action="login.action" method="post">
-		<s:textfield name="user.username" label="”√ªß√˚" />
-		<s:textfield name="user.password" label="√‹ ¬Î" />
-		<s:submit value="µ«¬º" />
+		<s:textfield name="user.username" label="Áî®Êà∑Âêç" />
+		<s:textfield name="user.password" label="ÂØÜ Á†Å" />
+		<s:submit value="ÁôªÂΩï" />
 	</s:form>
 
 	<form name="form1" action="login.action">
@@ -30,7 +30,7 @@
 		<br>
 		<input type="password" name="password">
 		<br>
-		<input type="submit" value="µ«¬º">
+		<input type="submit" value="ÁôªÂΩï">
 	</form>
 
 </body>

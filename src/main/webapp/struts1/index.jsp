@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
@@ -16,15 +16,15 @@
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
 <!--
-<link rel="stylesheet" type="text/css" href="styles.css">
--->
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
 </head>
 
 <body>
-	<a href="${pageContext.request.contextPath }/struts2/hello.jsp">hello.jsp</a>
+	<a href="${pageContext.request.contextPath }/struts1/register.jsp">register.jsp</a>
 	<br />
 	<br />
-	<a href="${pageContext.request.contextPath }/struts2/login.jsp">login.jsp</a>
+	<a href="${pageContext.request.contextPath }/struts1/register.jsp">register.jsp</a>
 	<br />
 </body>
 </html>

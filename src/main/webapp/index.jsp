@@ -23,8 +23,12 @@
 	<br />
 	<br />
 	<br />
-	<a href="${pageContext.request.contextPath }/struts2/index.jsp">Struts2</a>
+	<a href="${pageContext.request.contextPath }/struts1/index.jsp">Struts1</a>
 
+	<br />
+	<br />
+	<br />
+	<a href="${pageContext.request.contextPath }/struts2/index.jsp">Struts2</a>
 
 	<br />
 	<br />

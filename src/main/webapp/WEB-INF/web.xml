@@ -100,16 +100,37 @@
 		</taglib>
 	</jsp-config>
 
+	<!-- http://yawperism.blogspot.jp/2010/08/can-struts-1-2-coexist-in-same-web.html -->
+	<!-- http://www.coderanch.com/t/554617/Struts/Struts-coexist-web-application -->
+	<!-- http://struts.apache.org/docs/migration-strategies.html -->
+	<!-- struts1 -->
+	<servlet>
+		<servlet-name>Struts1Servlet</servlet-name>
+		<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>/WEB-INF/struts-config.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Struts1Servlet</servlet-name>
+		<url-pattern>*.do</url-pattern>
+		<!-- <url-pattern>/struts1/*</url-pattern> -->
+	</servlet-mapping>
 
+	<!-- struts2 -->
 	<filter>
-		<filter-name>struts2</filter-name>
+		<filter-name>Struts2Filter</filter-name>
 		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
 	</filter>
-
 	<filter-mapping>
-		<filter-name>struts2</filter-name>
+		<filter-name>Struts2Filter</filter-name>
+		<!-- <url-pattern>*.action</url-pattern> -->
 		<url-pattern>/struts2/*</url-pattern>
 	</filter-mapping>
+
+
 
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
