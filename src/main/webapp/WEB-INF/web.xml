@@ -107,9 +107,15 @@
 	<servlet>
 		<servlet-name>Struts1Servlet</servlet-name>
 		<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+		<!-- Default -->
 		<init-param>
 			<param-name>config</param-name>
 			<param-value>/WEB-INF/struts-config.xml</param-value>
+		</init-param>
+		<!-- Provider module -->
+		<init-param>
+			<param-name>config/struts1/provider</param-name>
+			<param-value>/WEB-INF/struts-config-struts1-provider.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>

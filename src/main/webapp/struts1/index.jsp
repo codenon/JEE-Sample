@@ -24,7 +24,13 @@
 	<a href="${pageContext.request.contextPath }/struts1/register.jsp">register.jsp</a>
 	<br />
 	<br />
-	<a href="${pageContext.request.contextPath }/struts1/register.jsp">register.jsp</a>
+	<a href="${pageContext.request.contextPath }/struts1/provider/video/list.do?format=xml">Video List xml</a>
+	<br />
+	<br />
+	<a href="${pageContext.request.contextPath }/struts1/provider/video/list.do?format=json">Video List json</a>
+	<br />
+	<br />
+	<a href="${pageContext.request.contextPath }/struts1/provider/manage.jsp">Video Manage</a>
 	<br />
 </body>
 </html>
