@@ -1,4 +1,4 @@
-package cn.conon.jee.sample.websers.rs.jersey;
+package cn.conon.jee.sample.websers.rs.jersey.resource;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
