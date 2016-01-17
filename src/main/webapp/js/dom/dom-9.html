@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Untitled Document</title>
+
+<script type="text/javascript">
+	/**
+	 * 删除节点
+	 */
+	window.onload = function() {
+		//需求: 删除 #dj 节点
+		var dj = document.getElementById("dj");
+		dj.parentNode.removeChild(dj);
+
+		//需求: 为每一个 li 节点, 添加 onclick 事件, 删除自身
+		var liNodes = document.getElementsByTagName("li");
+		for (var i = 0; i < liNodes.length; i++) {
+			liNodes[i].onclick = function() {
+				this.parentNode.removeChild(this);
+			};
+		}
+	};
+</script>
+
+</head>
+<body>
+	<p>你喜欢哪个城市?</p>
+	<ul id="city">
+		<li id="bj">北京</li>
+		<li>上海</li>
+		<li id="dj">东京</li>
+		<li>首尔</li>
+	</ul>
+
+	<br>
+	<br>
+	<p>你喜欢哪款单机游戏?</p>
+	<ul id="game">
+		<li id="rl">红警</li>
+		<li>实况</li>
+		<li>极品飞车</li>
+		<li>魔兽</li>
+	</ul>
+
+	<br>
+	<br>
+	gender:
+	<input type="radio" name="gender" value="male" />
+	Male
+	<input type="radio" name="gender" value="female" />
+	Female
+</body>
+</html>

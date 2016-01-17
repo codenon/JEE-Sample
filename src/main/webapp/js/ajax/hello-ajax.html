@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Untitled Document</title>
+		<script type="text/javascript">
+			
+			/**
+			 * 返回 XMLHttpRequest 对象
+			 */
+			function getRequest(){
+				var xhr = null;
+			
+				if(window.XMLHttpRequest){
+					xhr = new XMLHttpRequest();
+				}
+				if(window.ActiveXObject){
+					xhr = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				
+				return xhr;
+			}
+
+			window.onload = function(){
+				document.getElementsByTagName("a")[0].onclick = function(){
+					
+					//1. 获取 XMLHttpRequest 对象
+					var xhr = getRequest();
+					
+					//2. 向服务器发送请求
+					//2.1 准备请求: 请求方式, 请求的路径
+					xhr.open("GET", "msg.txt?random=" + Math.random());
+					
+					//2.2 发送请求 
+					xhr.send(null);
+
+					//3. 接收服务器的响应, 打印相应结果: 当 XMLHttpRequest 对象的 readyState 为 4 的时候表示响应发送完毕; 当 status 属性为 200 时, 表示响应正常
+					//3.1 为 XMLHttpRequest 对象绑定 onreadystatechange 响应函数
+					xhr.onreadystatechange = function(){
+						//3.2 当 XMLHttpRequest 对象的 readyState 为 4 的时候表示相应发送完毕
+						//alert(xhr.readyState);
+						if(xhr.readyState == 4){
+							
+							//3.3 当 status 属性为 200 时, 表示相应正常
+							if(xhr.status == 200){
+								//3.4 打印相应结果
+								alert(xhr.responseText);
+							}
+						}
+					};
+					
+					return false;
+				};
+			};
+			
+		</script>
+	</head>
+	<body>
+		<a href="msg.txt">Message</a>
+	</body>
+</html>

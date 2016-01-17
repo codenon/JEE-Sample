@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Untitled Document</title>
+<script type="text/javascript" src="scripts/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	//需求: 击任何一个 li 节点, 改变其文本节点的文本值: 若文本节点中没有 "^^", 则在前边加上 "^^", 若有则去掉
+	$(function() {
+		$("li").click(function() {
+			var text = $(this).text();
+
+			var reg = /^\^{2}/;
+			if (reg.test(text)) {
+				text = text.replace(reg, "");
+			} else {
+				text = "^^" + text;
+			}
+
+			$(this).text(text);
+		});
+	});
+</script>
+
+</head>
+<body>
+	<p>你喜欢哪个城市?</p>
+	<ul id="city">
+		<li id="bj" title="Beijing">北京</li>
+		<li>上海</li>
+		<li>东京</li>
+		<li>首尔</li>
+	</ul>
+
+	<br>
+	<br>
+	<p>你喜欢哪款单机游戏?</p>
+	<ul id="game">
+		<li id="ra">红警</li>
+		<li>实况</li>
+		<li>极品飞车</li>
+		<li id="war3">魔兽</li>
+	</ul>
+
+	<br>
+	<br>
+	gender:
+	<input type="radio" name="gender" value="male" />
+	Male
+	<input type="radio" name="gender" value="female" />
+	Female
+</body>
+</html>

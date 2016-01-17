@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Untitled Document</title>
+<script type="text/javascript" src="scripts/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	function displayText(liNode) {
+		alert($(liNode).text());
+	}
+
+	$(function() {
+		$("li").click(function() {
+			displayText(this);
+		});
+
+		$("#submit").click(function() {
+			var type = $(":radio[name=type]:checked").val();
+
+			if (!type) {
+				alert("请选择类型!");
+				return false;
+			}
+
+			var content = $.trim($(":text[name=name]").val());
+			$(":text[name=name]").val(content);
+			if (content == "") {
+				alert("请输入内容!");
+				return false;
+			}
+
+			$("<li>" + content + "</li>").click(function() {
+				displayText(this);
+			}).appendTo($("#" + type));
+
+			return false;
+		});
+	});
+</script>
+</head>
+<body>
+	<p>你喜欢哪个城市?</p>
+	<ul id="city">
+		<li id="bj" name="BeiJing">北京</li>
+		<li>上海</li>
+		<li>东京</li>
+		<li>首尔</li>
+	</ul>
+	<br>
+	<br>
+	<p>你喜欢哪款单机游戏?</p>
+	<ul id="game">
+		<li id="rl">红警</li>
+		<li>实况</li>
+		<li>极品飞车</li>
+		<li>魔兽</li>
+	</ul>
+	<br>
+	<br>
+	<form action="dom-5.html" name="myform">
+		<input type="radio" name="type" value="city">
+		城市
+		<input type="radio" name="type" value="game">
+		游戏 name:
+		<input type="text" name="name" />
+		<input type="submit" value="Submit" id="submit" />
+	</form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Untitled Document</title>
+<script type="text/javascript">
+	/**
+	 * 此种方案, 不推荐使用
+	 * 1. js 和 html 代码耦合
+	 * 2. 可维护性差
+	 * 
+	 */
+
+	//alert("hello world!");
+	function helloworld() {
+		alert("hello world");
+	}
+</script>
+</head>
+<body>
+	<!-- 为该按钮, 添加 onclick 相应函数, 打印 "helloworld" -->
+	<button id="button" onclick="helloworld();">Click Me!</button>
+</body>
+</html>

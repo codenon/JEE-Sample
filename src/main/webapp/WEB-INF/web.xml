@@ -120,6 +120,10 @@
 			<param-name>config/struts1/provider</param-name>
 			<param-value>/WEB-INF/struts-config-struts1-provider.xml</param-value>
 		</init-param>
+		<init-param>
+			<param-name>config/ajax</param-name>
+			<param-value>/WEB-INF/struts-config-ajax.xml</param-value>
+		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
@@ -127,6 +131,18 @@
 		<url-pattern>*.do</url-pattern>
 		<!-- <url-pattern>/struts1/*</url-pattern> -->
 	</servlet-mapping>
+
+	<filter>
+		<filter-name>ConnectionFilter</filter-name>
+		<filter-class>cn.conon.jee.sample.ajax.db.ConnectionFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>ConnectionFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
 
 	<!-- struts2 -->
 	<filter>

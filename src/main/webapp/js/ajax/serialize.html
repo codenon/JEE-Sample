@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Untitled Document</title>
+		<script type="text/javascript" src="scripts/jquery-1.4.2.js"></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				$(":submit").click(function(){
+					
+					var url = "";
+					var args = $(":text").serialize();
+					         //{name: $(":text[name=name]").val(), email: $(":text[name=email]").val()};
+					$.get(url, args, function(data){
+						
+					});
+					
+					return false;
+				});
+			});
+			
+		</script>
+	</head>
+	<body>
+		<form action="#" method="post">
+			
+			name: <input type="text" name="name"/>
+			email: <input type="text" name="email"/>
+			
+			<input type="submit" value="Submit"/>
+		</form>
+	</body>
+</html>

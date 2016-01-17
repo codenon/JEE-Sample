@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Untitled Document</title>
+</head>
+<body>
+	<!-- 为该按钮, 添加 onclick 相应函数, 打印 "helloworld" -->
+	<button id="button">Click Me!</button>
+</body>
+</html>
+
+<script type="text/javascript">
+	/**
+	 * 缺点: 把 js 代码放到 body 的后边, 不符合习惯
+	 */
+
+	function helloworld() {
+		alert('hello world!');
+	}
+
+	//1. 获取到 button 节点
+	var button = document.getElementById("button");
+	//alert(button);
+
+	//2. 为其 onclick 属性赋值, 赋值为一个相应函数
+	//button.onclick = helloworld;
+
+	//若 helloworld 函数, 在当前文档中只被使用了一次, 则可以考虑使用匿名函数
+	button.onclick = function() {
+		alert('^^^hello world!');
+	};
+
+	//button.onclick = helloworld(); 意味着赋给 button.onclick 的是该函数的执行结果, 所以不能达到预期的效果
+	//相反, 赋给 /button.onclick 的应该是一个函数的引用, 这样在点击该按钮时, 才会触发该函数
+</script>

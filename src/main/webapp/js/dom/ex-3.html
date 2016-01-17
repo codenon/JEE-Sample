@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Untitled Document</title>
+<script type="text/javascript">
+	function showText(liNode) {
+		alert("^_^" + liNode.firstChild.nodeValue + "^_^");
+	}
+
+	window.onload = function() {
+		//****知识: 在 js 中 null, undefined, 0, false 都可以作为 false 使用, 除此以外可以作为 true 使用
+
+		//需求: 点击 submit 按钮时,　检查是否选择 type, 若没有选择给出提示: "请选择类型"; 
+		//                        检查文本框中是否有输入(可以去除前后空格), 若没有输入,　则给出提示: "请输入内容"; 
+		//若检查都通过, 则在相应的 ul 节点中添加对应的 li 节点 
+
+		//**使包括新增的 li 都响应 click 事件: 弹出文本节点的值	
+		var liNodes = document.getElementsByTagName("li");
+		for (var i = 0; i < liNodes.length; i++) {
+			liNodes[i].onclick = function() {
+				showText(this);
+			};
+		}
+
+		//1. 获取 #submit 节点, 并为其添加 onclick 响应函数
+		document.getElementById("submit").onclick = function() {
+
+			//3.选取所有 name="type" 的 radio
+			var types = document.getElementsByName("type");
+
+			//4. 遍历 3 的 radio 数组, 检查是否由被选中(checked 属性取值是否为true)
+			var type = null;
+			for (var i = 0; i < types.length; i++) {
+				if (types[i].checked) {
+					type = types[i].value;
+					break;
+				}
+			}
+
+			//5. 若 3 的 radio 数组没有被选中的, 则打印 "请选择类型", 方法结束
+			if (!type) {
+				alert("请选择类型");
+				return false;
+			}
+
+			//6. 选取所有 name="name" 的 input
+			//7. 获取 6 的 value 属性值, 即 text 的文本框的值
+			var value = document.getElementsByName("name")[0].value;
+
+			//8. 利用正则表达式, 去除 7 获取的 value 的前后空格
+			var reg = /^\s*|\s*$/g;
+			value = value.replace(reg, "");
+			document.getElementsByName("name")[0].value = value;
+
+			//9. 比对去除前后空格的 value 和 "", 若相等则打印"请输入内容", 方法结束
+			if (value == "") {
+				alert("请输入内容");
+				return false;
+			}
+
+			//10. 创建一个 li 节点
+			var liNode = document.createElement("li");
+
+			//11. 利用 9 的 value 创建一个文本节点
+			var liTextNode = document.createTextNode(value);
+
+			//12. 把 11 的文本节点加为 10 的子节点
+			liNode.appendChild(liTextNode);
+
+			//*** 为新增的 li 节点, 添加 onclick 响应函数
+			liNode.onclick = function() {
+				showText(this);
+			};
+
+			//13. 根据 3 得到的 type 的值, 选取对应的 ul 节点
+			//14. 把 10 创建的 li 加为 13 得到的 ul 的子节点
+			document.getElementById(type).appendChild(liNode);
+
+			//2. 取消 #submit 节点的默认行为, 响应函数返回 false.
+			return false;
+		};
+
+	}
+</script>
+</head>
+<body>
+	<p>你喜欢哪个城市?</p>
+	<ul id="city">
+		<li id="bj" name="BeiJing">北京</li>
+		<li>上海</li>
+		<li>东京</li>
+		<li>首尔</li>
+	</ul>
+	<br>
+	<br>
+	<p>你喜欢哪款单机游戏?</p>
+	<ul id="game">
+		<li id="rl">红警</li>
+		<li>实况</li>
+		<li>极品飞车</li>
+		<li>魔兽</li>
+	</ul>
+	<br>
+	<br>
+	<form action="dom-5.html" name="myform">
+		<input type="radio" name="type" value="city">
+		城市
+		<input type="radio" name="type" value="game">
+		游戏 name:
+		<input type="text" name="name" />
+		<input type="submit" value="Submit" id="submit" />
+	</form>
+</body>
+</html>

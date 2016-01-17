@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>People at Clearleft</title>
+        <style type="text/css">
+            @import url("clearleft.css");
+        </style>
+        <script type="text/javascript">
+            
+            function getRequest(){
+                var xhr = null;
+                
+                if (window.XMLHttpRequest) {
+                    xhr = new XMLHttpRequest();
+                }
+                if (window.ActiveXObject) {
+                    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                
+                return xhr;
+            }
+            
+            window.onload = function(){
+                var aNodes = document.getElementsByTagName("a");
+                
+                for (var i = 0; i < aNodes.length; i++) {
+                    aNodes[i].onclick = function(){
+                        //1. 获取 XMLHttpRequest 对象
+                        var xhr = getRequest();
+                        
+                        //2. 向服务器发送请求
+                        //2.1 准备请求: 请求方式, 请求的路径
+                        var url = this.href;
+                        xhr.open("GET", url + "?random=" + Math.random());
+                        
+                        //2.2 发送请求 
+                        xhr.send(null);
+                        
+                        //3. 接收服务器的响应, 打印相应结果: 当 XMLHttpRequest 对象的 readyState 为 4 的时候表示响应发送完毕; 当 status 属性为 200 时, 表示响应正常
+                        //3.1 为 XMLHttpRequest 对象绑定 onreadystatechange 响应函数
+                        xhr.onreadystatechange = function(){
+                            //3.2 当 XMLHttpRequest 对象的 readyState 为 4 的时候表示相应发送完毕
+                            //alert(xhr.readyState);
+                            if (xhr.readyState == 4) {
+                            
+                                //3.3 当 status 属性为 200 时, 表示相应正常
+                                if (xhr.status == 200) {
+                                    //3.4 解析 xml 数据
+                                    var xmlDoc = xhr.responseXML;
+									
+									var name = xmlDoc.getElementsByTagName("name")[0].firstChild.nodeValue;
+									var email = xmlDoc.getElementsByTagName("email")[0].firstChild.nodeValue;
+									var website = xmlDoc.getElementsByTagName("website")[0].firstChild.nodeValue;
+									
+									//3.5 创建需要显示的 DOM 元素, 并把创建好的元素加入到 html 文档中
+									/**
+									 * <h2><a href="mailto:andy@clearleft.com">Andy Budd</a></h2>
+									 * <a href="http://andybudd.com/">http://andybudd.com/</a>
+									 */
+									var aNode = document.createElement("a");
+									aNode.href = "mailto:" + email;
+									aNode.appendChild(document.createTextNode(name));
+									var h2Node = document.createElement("h2");
+									h2Node.appendChild(aNode);
+									
+									var aNode2 = document.createElement("a");
+									aNode2.href = website;
+									aNode2.appendChild(document.createTextNode(website));
+                                
+									var details = document.getElementById("details");
+									details.innerHTML = "";
+									details.appendChild(h2Node);
+									details.appendChild(aNode2);
+								}
+                            }
+                        };
+                        
+                        return false;
+                    };
+                }
+                
+            };
+        </script>
+		
+    </head>
+    <body>
+        <h1>People</h1>
+        <ul>
+            <li>
+                <a href="files/andy.xml">Andy</a>
+            </li>
+            <li>
+                <a href="files/richard.xml">Richard</a>
+            </li>
+            <li>
+                <a href="files/jeremy.xml">Jeremy</a>
+            </li>
+        </ul>
+        <div id="details">
+        </div>
+    </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Untitled Document</title>
+		<script type="text/javascript" src="scripts/jquery-1.4.2.js"></script>
+		<script type="text/javascript">
+			/**
+			 * 区分 :first 和 :first-child
+			 */
+			$(function(){
+				//$("ul:first"): 选取第一个 ul 节点, 返回的 jQuery 对象的 length 为 1
+				alert($("ul:first").html());
+				
+				//$("ul :first-child"): 选取 ul 节点的第一个子节点, 返回的 jQuery 对象的 length 为 3
+				alert($("ul :first-child").length);
+				$("ul :first-child").each(function(){
+					alert($(this).text());
+				});
+			});
+			
+			/**
+			 * 区分 ul:first-child 和 ul :first-child
+			 */
+			$(function(){
+				//$("ul :first-child"): 选取 ul 节点的第一个子节点, 返回的 jQuery 对象的 length 为 3
+				
+				//打印选取 body 的直接 ul 节点的 第一个 li 子节点的文本值: 北京, 红警
+//				alert($("body > ul > li:first-child").length);
+//				
+//				$("body > ul > li:first-child").each(function(){
+//					alert($(this).text());
+//				});
+				
+//				alert($("ul li:first-child").length);
+//				$("body > ul li:first-child").each(function(){
+//					alert($(this).text());
+//				});
+				
+//				alert($("ul li:first").length);
+//				alert($("ul li:first-child").length);
+//				alert($("body ul:first-child").length);
+			});
+			
+			
+		</script>
+		
+	</head>
+	<body>
+		<p>你喜欢哪个城市?</p>
+		<ul id="city">
+			<li id="bj" name="BeiJing">北京</li>
+			<ul id="singer">
+				<li>宋祖英</li>
+				<li>周杰伦</li>
+				<li>伍佰</li>
+				<li>崔健</li>
+			</ul>
+			<li>上海</li>
+			<li>东京</li>
+			<li>首尔</li>
+		</ul>
+		
+		<br/><br/>
+		<p>你喜欢哪款单机游戏?</p>
+		<ul id="game">
+			<li id="rl">红警</li>
+			<ul id="singer2">
+				<li>宋祖英</li>
+				<li>周杰伦</li>
+				<li>伍佰</li>
+				<li>崔健</li>
+			</ul>
+			<li>实况</li>
+			<li>极品飞车</li>
+			<li>魔兽</li>
+		</ul>
+		
+		<br><br>
+		gender: 
+			<input type="radio" name="gender" value="male"/>Male
+			<input type="radio" name="gender" value="female"/>Female
+	</body>
+</html>	

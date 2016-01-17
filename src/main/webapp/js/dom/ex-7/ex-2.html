@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Untitled Document</title>
+<script type="text/javascript">
+	//js 解析 xml 文档的函数, 只支持 ie
+	function parseXml(fileName) {
+		//IE 内核的浏览器
+		if (window.ActiveXObject) {
+			//创建 DOM 解析器
+			var doc = new ActiveXObject("Microsoft.XMLDOM");
+			doc.async = "false";
+			//加载 XML 文档, 获取 XML 文档对象
+			doc.load(fileName);
+			return doc;
+		}
+	}
+
+	window.onload = function() {
+
+		//1. 选取 #province 节点, 为其添加 onchange 响应函数
+		document.getElementById("province").onchange = function() {
+			//**清空 #city 节点的所有子节点, 只保留第一个子节点, 注意在删除节点时, 数组时变化的
+			var cityNode = document.getElementById("city");
+			var cityOptions = cityNode.getElementsByTagName("option");
+			var len = cityOptions.length;
+			for (var i = 1; i < len; i++) {
+				cityNode.removeChild(cityOptions[1]);
+			}
+
+			//2. 若选取的值非空(!=""), 则获取 cities.xml 文档对应的 Document 对象: xmlDoc
+			if (this.value != null) {
+				var xmlDoc = parseXml("cities.xml");
+
+				//3. 根据当前 #province 节点的值, 到 cities.xml 文档中获取对应的 province 节点
+				var xmlProvinces = xmlDoc.getElementsByTagName("province");
+				var xmlProvince = null;
+				for (var i = 0; i < xmlProvinces.length; i++) {
+					if (xmlProvinces[i].getAttribute("name") == this.value) {
+						xmlProvince = xmlProvinces[i];
+						break;
+					}
+				}
+
+				//4. 获取 cities.xml 文档中 province 节点的所有的 city 子节点, 遍历之, 创建类似于  
+				//   <option value="沈阳">沈阳</option>, 并把其加为 #city 的子节点 
+				var xmlCities = xmlProvince.getElementsByTagName("city");
+
+				for (var i = 0; i < xmlCities.length; i++) {
+					var val = xmlCities[i].firstChild.nodeValue;
+
+					var option = document.createElement("option");
+					option.value = val;
+					option.appendChild(document.createTextNode(val));
+
+					cityNode.appendChild(option);
+				}
+			}
+
+		};
+	}
+</script>
+</head>
+<body>
+	<select id="province">
+		<option value="">请选择...</option>
+		<option value="河北省">河北省</option>
+		<option value="辽宁省">辽宁省</option>
+		<option value="山东省">山东省</option>
+	</select>
+	<select id="city">
+		<option value="...">请选择...</option>
+	</select>
+</body>
+</html>

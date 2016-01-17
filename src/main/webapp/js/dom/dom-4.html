@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Untitled Document</title>
+
+<script type="text/javascript">
+	/**
+	 * 获取元素节点的子节点
+	 */
+	window.onload = function() {
+		/**
+		 * 1). childNodes 属性获取全部的子节点,
+		 * 火狐 和 ie的实现方式有区别: 火狐中会包括文本子节点, 而 ie 不会	
+		 */
+		//获取 id="city" 节点的全部子节点
+		var cityNode = document.getElementById("city");
+		var children = cityNode.childNodes;
+		alert(children.length);
+
+		/**
+		 * 获取 id="city" 的所有 li 子节点
+		 * 1. 使用 childNodes 属性获取, 因为 ie 和火狐的实现方式不一样, 所以不建议使用
+		 * 2. 使用 getElementsByTagName() 方法获取, 推荐使用 
+		 */
+		var cityLis = cityNode.getElementsByTagName("li");
+		alert(cityLis.length);
+
+		/**
+		 * firstChild: 获取第一个子节点
+		 */
+		var bjNode = cityNode.firstChild;
+		alert(bjNode.id);
+
+		/**
+		 * lastChild: 获取最后一个子节点
+		 */
+
+	};
+</script>
+
+</head>
+<body>
+	<p>你喜欢哪个城市?</p>
+	<ul id="city">
+		<li id="bj">北京</li>
+		<li>上海</li>
+		<li>东京</li>
+		<li>首尔</li>
+	</ul>
+
+	<br>
+	<br>
+	<p>你喜欢哪款单机游戏?</p>
+	<ul id="game">
+		<li id="rl">红警</li>
+		<li>实况</li>
+		<li>极品飞车</li>
+		<li>魔兽</li>
+	</ul>
+
+	<br>
+	<br>
+	gender:
+	<input type="radio" name="gender" value="male" />
+	Male
+	<input type="radio" name="gender" value="female" />
+	Female
+</body>
+</html>

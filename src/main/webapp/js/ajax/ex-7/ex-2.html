@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Untitled Document</title>
+		<script type="text/javascript" src="../scripts/jquery-1.4.2.js"></script>
+        <script type="text/javascript">
+            
+            $(function(){
+				$("#province").change(function(){
+					$("#city").html("<option value=''>请选择...</option>");
+					
+					var url = "cities.xml";
+					var args = {random: Math.random()};
+					var province = $(this).val();
+
+					if(province != ""){
+						$.get(url, args, function(data){
+							var $pro = $(data).find("province[name='" + province + "']");
+							$pro.find("city").each(function(){
+								$("<option>" + $(this).text() + "</option>").appendTo($("#city"));
+							});
+						});
+					}
+				});
+			});
+            
+        </script>
+    </head>
+    <body>
+        <select id="province">
+            <option value="">请选择...</option>
+            <option value="河北省">河北省</option>
+            <option value="辽宁省">辽宁省</option>
+            <option value="山东省">山东省</option>
+        </select>
+        <select id="city">
+            <option value="">请选择...</option>
+        </select>
+    </body>
+</html>

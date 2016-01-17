@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Untitled Document</title>
+
+<script type="text/javascript">
+	/**
+	 * 节点的替换
+	 */
+	window.onload = function() {
+		//需求: 把 <li>东京</li> 节点替换为 <li>广州</li> 节点
+		var liNode = document.createElement("li");
+		var textNode = document.createTextNode("广州");
+		liNode.appendChild(textNode);
+
+		document.getElementById("city").replaceChild(liNode, document
+				.getElementById("dj"));
+
+		//需求: 互换 #bj 和 #rl 节点 
+		var bj = document.getElementById("bj");
+		var rl = document.getElementById("rl");
+
+		//该节点除了替换功能以外还有移动的功能.  
+		//cloneNode(boolean): 克隆节点, 若属性值为 true, 也克隆节点的子节点
+		//				document.getElementById("city").replaceChild(rl.cloneNode(true), bj);
+		//				document.getElementById("game").replaceChild(bj, rl);
+
+		replaceEach(rl, bj);
+	};
+
+	/**
+	 * 互换 aNode 和 bNode
+	 * @param {Object} aNode
+	 * @param {Object} bNode
+	 */
+	function replaceEach(aNode, bNode) {
+		//1. 获取 aNode 和 bNode 的父节点
+		var aNodeParent = aNode.parentNode;
+		var bNodeParent = bNode.parentNode;
+
+		//2. 若 aNode 和 bNode 都有父节点
+		if (aNodeParent && bNodeParent) {
+			//3. 克隆 aNode
+			//4. 两次替换
+			aNodeParent.replaceChild(bNode.cloneNode(true), aNode);
+			bNodeParent.replaceChild(aNode, bNode);
+		}
+	}
+</script>
+
+</head>
+<body>
+	<p>你喜欢哪个城市?</p>
+	<ul id="city">
+		<li id="bj">北京</li>
+		<li>上海</li>
+		<li id="dj">东京</li>
+		<li>首尔</li>
+	</ul>
+
+	<br>
+	<br>
+	<p>你喜欢哪款单机游戏?</p>
+	<ul id="game">
+		<li id="rl">红警</li>
+		<li>实况</li>
+		<li>极品飞车</li>
+		<li>魔兽</li>
+	</ul>
+
+	<br>
+	<br>
+	gender:
+	<input type="radio" name="gender" value="male" />
+	Male
+	<input type="radio" name="gender" value="female" />
+	Female
+</body>
+</html>

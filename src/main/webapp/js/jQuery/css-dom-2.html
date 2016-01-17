@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Untitled Document</title>
+		<script type="text/javascript" src="scripts/jquery-1.4.2.js"></script>
+		<script type="text/javascript">
+			/**
+			 * 操作 css 属性
+			 */
+			$(function(){
+				//1. 为 #city 添加 background css 属性
+				$("#city").css("background", "#ffbbaa");
+				
+				//2. 获取 #city 添加 background css 属性
+				alert($("#city").css("background"));
+				
+				//3. 清除 #city 的 background css 属性
+				//$("#city").css("background", null);
+				
+				//4. 设置 #game 的透明度为 0.1
+				//$("#game").css("opacity", 0.1);
+				
+				//5. 设置 #city 的宽度为 300
+				$("#city").css("background", "#ffbbaa");
+				$("#city").width(300);
+				
+				//6. 打印 #city 相对于当前视窗中的相对位移
+				alert("top: " + $("#city").offset().top + ", left: " + $("#city").offset().left);
+			});
+			
+			
+		</script>
+		
+	</head>
+	<body>
+		<p>你喜欢哪个城市?</p>
+		<ul id="city">
+			<li id="bj" name="BeiJing">北京</li>
+			<li>上海</li>
+			<li>东京</li>
+			<li>首尔</li>
+		</ul>
+		
+		<br><br>
+		<p>你喜欢哪款单机游戏?</p>
+		<ul id="game">
+			<li id="rl">红警</li>
+			<li>实况</li>
+			<li>极品飞车</li>
+			<li>魔兽</li>
+		</ul>
+		
+		<br><br>
+		gender: 
+			<input type="radio" name="gender" value="male"/>Male
+			<input type="radio" name="gender" value="female"/>Female
+	</body>
+</html>	

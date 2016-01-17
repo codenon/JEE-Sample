@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Untitled Document</title>
+<script type="text/javascript">
+	/**
+	 * 互换 aNode 和 bNode
+	 * @param {Object} aNode
+	 * @param {Object} bNode
+	 */
+	function replaceEach(aNode, bNode) {
+		//1. 获取 aNode 和 bNode 的父节点
+		var aNodeParent = aNode.parentNode;
+		var bNodeParent = bNode.parentNode;
+
+		//2. 若 aNode 和 bNode 都有父节点
+		if (aNodeParent && bNodeParent) {
+			//3. 克隆 aNode, 
+			var tempNode = bNode.cloneNode(true);
+			//注意克隆节点的同时不会克隆节点上的事件, 若需要克隆事件, 则应手工完成
+			tempNode.onclick = bNode.onclick;
+			//在火狐浏览器中, 克隆节点不能克隆为节点添加的自定义属性
+			tempNode.index = bNode.index;
+
+			//4. 两次替换
+			aNodeParent.replaceChild(tempNode, aNode);
+			bNodeParent.replaceChild(aNode, bNode);
+		}
+	}
+
+	//需求: 点击 city 节点的任何 li 节点都能完成如下功能: 替换为 game 相应索引的节点; 反之亦然
+	window.onload = function() {
+
+		//1. 选取所有的 li 节点
+		var liNodes = document.getElementsByTagName("li");
+
+		//2. 遍历所有的 li 节点, 为每一个 li 节点添加 onclick 响应函数
+		for (var i = 0; i < liNodes.length; i++) {
+			liNodes[i].index = i;
+
+			liNodes[i].onclick = function() {
+
+				var index = this.index;
+				var targetIndex = 0;
+				if (index < 4) {
+					targetIndex = 4 + index;
+				} else {
+					targetIndex = index - 4;
+				}
+
+				//5. 替换之后 index 发生了变化, 需要重新设置 index 的属性值
+				this.index = targetIndex;
+				liNodes[targetIndex].index = index;
+
+				//3. 确定要替换的节点
+				var targetNode = liNodes[targetIndex];
+				//4. 替换
+				replaceEach(this, targetNode);
+
+			};
+		}
+	};
+</script>
+</head>
+<body>
+	<p>你喜欢哪个城市?</p>
+	<ul id="city">
+		<li id="bj" name="BeiJing">北京</li>
+		<li>上海</li>
+		<li>东京</li>
+		<li>首尔</li>
+	</ul>
+
+	<br>
+	<br>
+	<p>你喜欢哪款单机游戏?</p>
+	<ul id="game">
+		<li id="rl">红警</li>
+		<li>实况</li>
+		<li>极品飞车</li>
+		<li>魔兽</li>
+	</ul>
+</body>
+</html>

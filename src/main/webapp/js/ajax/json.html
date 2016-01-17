@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Untitled Document</title>
+		<script type="text/javascript">
+			
+			//使用 JSON 数据定义一个对象
+//			var person = {
+//				name: "Tom",
+//				age: 12,
+//				address: {
+//					city: "Beijing",
+//					street: "Shangdi"
+//				},
+//				work: function(){
+//					alert("work hard...");
+//				}
+//			};
+//			
+//			alert(person.name);
+//			alert(person.age);
+//			alert(person.address.city);
+//			alert(person.address.street);
+//			person.work();
+
+			//eval() 函数
+			var str = "alert('hello eval...')";
+			alert(str);
+			//函数 eval 会把一个字符串当作它的参数. 然后这个字符串会被当作 JavaScript 代码来执行
+			eval(str);
+
+			var address = "{city: 'beijing', street: 'shangdi'}";
+			//JSON 字符串通过类似于下面的方法来解析为 JSON 对象
+			var addr = eval("(" + address + ")");
+			alert(addr.city);
+			
+			//以下代码不能正常工作, 因为 address 的值是一个字符串!!
+			//alert(address.city);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

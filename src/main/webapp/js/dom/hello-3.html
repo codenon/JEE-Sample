@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Untitled Document</title>
+<script type="text/javascript">
+	/**
+	 * window.onload 事件在整个 html 文档被记载成功之后被触发
+	 */
+	window.onload = function() {
+		var button = document.getElementById("button");
+
+		button.onclick = function() {
+			alert('helloworld');;
+		};
+	};
+</script>
+</head>
+<body>
+	<!-- 为该按钮, 添加 onclick 相应函数, 打印 "helloworld" -->
+	<button id="button">Click Me!</button>
+</body>
+</html>

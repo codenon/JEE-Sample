@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Untitled Document</title>
+		<script type="text/javascript" src="scripts/jquery-1.4.2.js"></script>
+		<script type="text/javascript">
+			/**
+			 * 遍历子节点
+			 */
+			$(function(){
+				//1. 遍历 #city 的所有的子节点 
+//				$("#city").children("li").each(function(){
+//					alert($(this).text());
+//				});
+				
+				//2. 获取 #bj 节点的下一个 li 兄弟节点
+				//alert($("#bj + li").text());
+//				alert($("#bj").next("li").text());
+				
+				//3. 获取 #bj 节点的后边的所有的 li 兄弟节点
+//				$("#bj ~ li").each(function(){
+//					alert($(this).text());
+//				});
+				
+//				$("#bj").nextAll("li").each(function(){
+//					alert($(this).text());
+//				});
+
+				//4. 获取 #dj 节点的所有的 li 兄弟节点
+				$("#dj").siblings("li").each(function(){
+					alert($(this).text());
+				});
+			});
+			
+			
+		</script>
+		
+	</head>
+	<body>
+		<p>你喜欢哪个城市?</p>
+		<ul id="city">
+			<li id="bj" name="BeiJing">北京</li>
+			<li>上海</li>
+			<li id="dj">东京</li>
+			<li>首尔</li>
+		</ul>
+		
+		<br/><br/>
+		<p>你喜欢哪款单机游戏?</p>
+		<ul id="game">
+			<li id="rl">红警</li>
+			<li>实况</li>
+			<li>极品飞车</li>
+			<li>魔兽</li>
+		</ul>
+		
+		<br><br>
+		<p>你喜欢哪名歌手?</p>
+		<ul id="singer">
+			<li>宋祖英</li>
+			<li>周杰伦</li>
+			<li>伍佰</li>
+			<li>崔健</li>
+		</ul>
+		
+		<br><br>
+		gender: 
+			<input type="radio" name="gender" value="male"/>Male
+			<input type="radio" name="gender" value="female"/>Female
+	</body>
+</html>	

@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Untitled Document</title>
+
+<script type="text/javascript">
+	/**
+	 * 插入节点
+	 */
+	window.onload = function() {
+		//需求: 创建 <li>广州</li> 节点, 把该节点插入到 #dj 节点的前面
+		var liNode = document.createElement("li");
+		var textNode = document.createTextNode("广州");
+		liNode.appendChild(textNode);
+
+		//document.getElementById("city").insertBefore(liNode, document.getElementById("dj"));
+
+		//需求: 创建 <li>广州</li> 节点, 把该节点插入到 #dj 节点的后面
+		//思路: 获取 #dj 节点的下一个兄弟节点 temp, 再把新创建的 li 节点插入到 temp 节点的前面
+		//document.getElementById("city").insertBefore(liNode, document.getElementById("dj").nextSibling);
+		insertAfter(liNode, document.getElementById("dj"));
+
+	};
+
+	/**
+	 * 把 aNode 插入到 bNode 的后边
+	 * @param {Object} aNode
+	 * @param {Object} bNode
+	 */
+	function insertAfter(aNode, bNode) {
+		//1. 获取 bNode 的父节点
+		var parentNode = bNode.parentNode;
+
+		if (parentNode) {
+			//2. 获取 bNode 的下一个兄弟节点
+			var ns = bNode.nextSibling;
+			//3. 判断是否存在兄弟节点, 若存在, 把 aNode 插入到兄弟节点的前面
+			if (ns) {
+				parentNode.insertBefore(aNode, ns);
+			}
+			//4. 若不存在, 直接把 aNode 作为子节点加入到父节点中
+			else {
+				parentNode.appendChild(aNode);
+			}
+		}
+	}
+</script>
+
+</head>
+<body>
+	<p>你喜欢哪个城市?</p>
+	<ul id="city">
+		<li id="bj">北京</li>
+		<li>上海</li>
+		<li id="dj">东京</li>
+		<li>首尔</li>
+	</ul>
+
+	<br>
+	<br>
+	<p>你喜欢哪款单机游戏?</p>
+	<ul id="game">
+		<li id="rl">红警</li>
+		<li>实况</li>
+		<li>极品飞车</li>
+		<li>魔兽</li>
+	</ul>
+
+	<br>
+	<br>
+	gender:
+	<input type="radio" name="gender" value="male" />
+	Male
+	<input type="radio" name="gender" value="female" />
+	Female
+</body>
+</html>

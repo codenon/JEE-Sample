@@ -19,6 +19,12 @@
 	<br />
 	<br />
 	<a href="${pageContext.request.contextPath }/jsp/index.jsp">JSP</a>
+	
+	<br />
+	<br />
+	<br />
+	<a href="${pageContext.request.contextPath }/js/index.jsp">JS</a>
+	
 
 	<br />
 	<br />

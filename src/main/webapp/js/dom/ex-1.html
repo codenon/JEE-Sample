@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Untitled Document</title>
+
+<script type="text/javascript">
+	//点击任何一个 li 节点, 弹出其文本值
+	window.onload = function() {
+
+		//1. 获取所有的 li 节点
+		var liNodes = document.getElementsByTagName("li");
+
+		//2. 遍历 1 得到的 li 节点的集合
+		for (var i = 0; i < liNodes.length; i++) {
+
+			//3. 为每一个 li 节点都添加 onclick 相应函数
+			liNodes[i].onclick = function() {
+				//4. 打印出当前 li 节点的文本子节点的值, this 代表当前节点
+				alert(this.firstChild.nodeValue);
+
+				//alert(i); //打印结果 8
+				//因为此时 i 的值已经为 8, 而 liNodes[8] 不存在, 所以以下代码无法工作
+				//alert(liNodes[i].firstChild.nodeValue);
+			};
+		}
+	}
+</script>
+
+</head>
+<body>
+	<p>你喜欢哪个城市?</p>
+	<ul id="city">
+		<li id="bj" title="Beijing">北京</li>
+		<li>上海</li>
+		<li>东京</li>
+		<li>首尔</li>
+	</ul>
+
+	<br>
+	<br>
+	<p>你喜欢哪款单机游戏?</p>
+	<ul id="game">
+		<li id="ra">红警</li>
+		<li>实况</li>
+		<li>极品飞车</li>
+		<li id="war3">魔兽</li>
+	</ul>
+
+	<br>
+	<br>
+	gender:
+	<input type="radio" name="gender" value="male" />
+	Male
+	<input type="radio" name="gender" value="female" />
+	Female
+</body>
+</html>

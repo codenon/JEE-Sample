@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Untitled Document</title>
+
+<script type="text/javascript">
+	/**
+	 * 获取属性节点
+	 */
+	window.onload = function() {
+		/**
+		 * 1). ** 可以直接通过 cityNode.id 这样的方式来获取和设置属性节点的值
+		 * 2). 通过元素节点的 getAttributeNode 方法来获取属性节点,然后在通过 nodeValue 来读写属性值 
+		 */
+		var bj = document.getElementById("bj");
+
+		//1). ** 可以直接通过 cityNode.id 这样的方式来获取和设置属性节点的值, 这种方法没有直接获取到属性节点
+		//       而是直接操作了属性节点的值
+		alert(bj.id);
+		bj.id = "BeiJing";
+
+		//2). 通过元素节点的 getAttributeNode 方法来获取属性节点,然后在通过 nodeValue 来读写属性值 
+		var bjIdNode = bj.getAttributeNode("id");
+		alert(bjIdNode.nodeValue);
+		bjIdNode.nodeValue = "bj";
+	};
+</script>
+
+</head>
+<body>
+	<p>你喜欢哪个城市?</p>
+	<ul id="city">
+		<li id="bj">北京</li>
+		<li>上海</li>
+		<li>东京</li>
+		<li>首尔</li>
+	</ul>
+
+	<br>
+	<br>
+	<p>你喜欢哪款单机游戏?</p>
+	<ul id="game">
+		<li id="rl">红警</li>
+		<li>实况</li>
+		<li>极品飞车</li>
+		<li>魔兽</li>
+	</ul>
+
+	<br>
+	<br>
+	gender:
+	<input type="radio" name="gender" value="male" />
+	Male
+	<input type="radio" name="gender" value="female" />
+	Female
+</body>
+</html>

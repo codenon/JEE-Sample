@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Untitled Document</title>
+
+<script type="text/javascript">
+	/**
+	 * 获取元素节点
+	 */
+	window.onload = function() {
+		/**
+		 * document.getElementById: 根据 id 属性获取对应的单个节点
+		 */
+		var bj = document.getElementById("bj");
+		alert(bj);
+
+		/**
+		 * 根据节点的 name 属性获取符合条件的节点数组, 
+		 */
+		var genders = document.getElementsByName("gender");
+		alert(genders.length);
+
+		/**
+		 * 但 ie 的实现方式和 W3C 标准有差别: 在 html 文档中若某节点 (li) 没有 name 属性,　则 ie 使用 
+		 * getElementsByName 不能获取到节点数组, 但火狐可以. 
+		 */
+		var lis = document.getElementsByName("BeiJing");
+		alert(lis.length);
+
+		/**
+		 * 根据标签名获取指定 节点名字 的数组, 数组对象 length 属性可以获取数组的长度
+		 */
+		var uls = document.getElementsByTagName("ul");
+		alert(uls.length);
+	};
+</script>
+
+</head>
+<body>
+	<p>你喜欢哪个城市?</p>
+	<ul id="city">
+		<li id="bj" name="BeiJing">北京</li>
+		<li>上海</li>
+		<li>东京</li>
+		<li>首尔</li>
+	</ul>
+
+	<br>
+	<br>
+	<p>你喜欢哪款单机游戏?</p>
+	<ul id="game">
+		<li id="rl">红警</li>
+		<li>实况</li>
+		<li>极品飞车</li>
+		<li>魔兽</li>
+	</ul>
+
+	<br>
+	<br>
+	gender:
+	<input type="radio" name="gender" value="male" />
+	Male
+	<input type="radio" name="gender" value="female" />
+	Female
+</body>
+</html>

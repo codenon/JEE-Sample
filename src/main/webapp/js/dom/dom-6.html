@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Untitled Document</title>
+
+<script type="text/javascript">
+	/**
+	 * 创建节点
+	 */
+	window.onload = function() {
+		//创建一个 li 节点: <li>舟曲</li>, 把该节点加为 #city 的最后一个子节点
+
+		/**
+		 * 1. 创建一个元素节点<li></li>: createElement()
+		 */
+		var liNode = document.createElement("li");
+
+		/**
+		 * 1.5 为 li 节点指定 id 属性值
+		 */
+		liNode.id = "zq";
+
+		/**
+		 * 2. 创建一个文本节点
+		 */
+		var liText = document.createTextNode("舟曲");
+
+		/**
+		 * 3. 把 liText 加为 1 创建的 li 节点的子节点
+		 */
+		liNode.appendChild(liText);
+
+		/**
+		 * 4. 为 #city 元素节点添加新创建的 li 子节点
+		 */
+		document.getElementById("city").appendChild(liNode);
+	};
+</script>
+
+</head>
+<body>
+	<p>你喜欢哪个城市?</p>
+	<ul id="city">
+		<li id="bj">北京</li>
+		<li>上海</li>
+		<li>东京</li>
+		<li>首尔</li>
+	</ul>
+
+	<br>
+	<br>
+	<p>你喜欢哪款单机游戏?</p>
+	<ul id="game">
+		<li id="rl">红警</li>
+		<li>实况</li>
+		<li>极品飞车</li>
+		<li>魔兽</li>
+	</ul>
+
+	<br>
+	<br>
+	gender:
+	<input type="radio" name="gender" value="male" />
+	Male
+	<input type="radio" name="gender" value="female" />
+	Female
+</body>
+</html>

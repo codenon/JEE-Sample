@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Untitled Document</title>
+
+<script type="text/javascript">
+	/**
+	 * 节点的属性
+	 */
+	window.onload = function() {
+		/**
+		 * 元素节点的属性
+		 */
+		var bj = document.getElementById("bj");
+
+		//nodeName: 代表当前节点的名字. 只读属性.
+		alert(bj.nodeName);
+
+		//nodeType: 返回一个整数, 这个数值代表着给定节点的类型. 只读属性. 1 -- 元素节点, 2 -- 属性节点, 3 -- 文本节点
+		alert(bj.nodeType);
+
+		/**
+		 * nodeValue: 返回给定节点的当前值(字符串). 可读写的属性: 
+		 * ①. 元素节点, 返回值是 null.
+		 * ②. 属性节点: 返回值是这个属性的值
+		 * ③. 文本节点: 返回值是这个文本节点的内容	
+		 */
+		alert(bj.nodeValue);
+
+		/**
+		 * 属性节点的属性
+		 */
+		var bjIdAttrNode = bj.getAttributeNode("id");
+		//nodeName: 代表当前节点的名字. 只读属性. **如果给定节点是一个文本节点, nodeName 属性将返回内容为 #text 的字符串
+		alert(bjIdAttrNode.nodeName);
+		alert(bjIdAttrNode.nodeType);
+		alert(bjIdAttrNode.nodeValue);
+
+		/**
+		 * 文本节点
+		 */
+		var textNode = bj.firstChild;
+		alert(textNode.nodeName);
+		alert(textNode.nodeType);
+		alert(textNode.nodeValue);
+	};
+</script>
+
+</head>
+<body>
+	<p>你喜欢哪个城市?</p>
+	<ul id="city">
+		<li id="bj" name="BeiJing">北京</li>
+		<li>上海</li>
+		<li>东京</li>
+		<li>首尔</li>
+	</ul>
+
+	<br>
+	<br>
+	<p>你喜欢哪款单机游戏?</p>
+	<ul id="game">
+		<li id="rl">红警</li>
+		<li>实况</li>
+		<li>极品飞车</li>
+		<li>魔兽</li>
+	</ul>
+
+	<br>
+	<br>
+	gender:
+	<input type="radio" name="gender" value="male" />
+	Male
+	<input type="radio" name="gender" value="female" />
+	Female
+</body>
+</html>
